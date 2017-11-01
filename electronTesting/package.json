@@ -1,0 +1,5 @@
+{
+  "name"    : "electron-testing",
+  "version" : "0.0.1",
+  "main"    : "main.js"
+}
