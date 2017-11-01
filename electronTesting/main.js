@@ -13,10 +13,24 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
+// https://electron.atom.io/docs/api/browser-window/
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600, 
-							minWidth: 800, minHeight: 600})
+  win = new BrowserWindow({
+		width: 980, height: 740, 
+		minWidth: 800, minHeight: 600,
+		backgroundColor: '#2e2c29',
+		center: true,
+		resizable: true,
+		movable: true,
+		minimizable: true,
+		maximizable: false, 
+		closable: true,
+		alwaysOnTop: true,
+		title: "Loading App...",
+		allowRunningInsecureContent: true,
+		webSecurity: true
+	})
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -26,7 +40,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
