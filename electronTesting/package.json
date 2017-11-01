@@ -1,5 +1,9 @@
 {
-  "name"    : "electron-testing",
-  "version" : "0.0.1",
-  "main"    : "main.js"
+  "name": "electron-testing",
+  "version": "0.0.1",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^1.7.9",
+    "nodemon": "^1.12.1"
+  }
 }
