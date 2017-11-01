@@ -13,6 +13,11 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
+var arguments = process.argv.slice(2);
+arguments.forEach(function(val,index, array) {
+	console.log(index + ': ' + val);
+}); 
+
 // https://electron.atom.io/docs/api/browser-window/
 function createWindow () {
   // Create the browser window.
@@ -24,14 +29,16 @@ function createWindow () {
 		resizable: true,
 		movable: true,
 		minimizable: true,
-		maximizable: false, 
+		maximizable: true, 
 		closable: true,
-		alwaysOnTop: true,
+		alwaysOnTop: false,
 		title: "Loading App...",
 		allowRunningInsecureContent: true,
 		webSecurity: true
 	})
-
+  
+  //win.setMenu(null);
+  
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
