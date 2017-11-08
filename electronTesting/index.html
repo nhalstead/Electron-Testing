@@ -11,6 +11,18 @@
 			.i { padding-left: 20px; }
 			small { font-size: 10px; }
 		</style>
+		<script>
+			function messageShow($inT){
+				let myNotification = new Notification(
+					'Hello this is a Test!', {
+					  body: 'Click me to find out what I do!'
+					}
+				);
+				myNotification.onclick = () => {
+				  alert("YOU CLICKED ITTTTTTTTT!!!");
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<article>
@@ -30,6 +42,6 @@
 					</div>
 			</div>
 		</article>
-		<a href="#" onclick="BrowserWindow.webContents.openDevTools()" style="text-decoration: none">.</a>
+		<a href="#" onclick="setTimeout(messageShow('Hello'), 2000);" style="text-decoration: none">.</a>
 	</body>
 </html>
