@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-	"start": ".\\node_modules\\.bin\\electron ."
+    "start": ".\\node_modules\\.bin\\electron .",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
-    "electron": "^1.7.9",
-    "nodemon": "^1.12.1"
-  }
+    "electron": "^8.2.1",
+    "nodemon": "^2.0.3",
+    "snyk": "^1.305.1"
+  },
+  "snyk": true
 }
